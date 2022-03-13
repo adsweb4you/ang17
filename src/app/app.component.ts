@@ -15,7 +15,7 @@ export class AppComponent {
   }
 
   showdiv(){
-   this.showcard = false;
+   this.showcard = !this.showcard;
   }
 
 }
