@@ -1,0 +1,4 @@
+1) შევქმნათ footer კომპონენტი (ng c g footer)
+2) შემოვიტანოთ app.component.html ში 
+
+3) https://www.thecodecampus.de/blog/wp-content/uploads/2016/09/gif.gif

@@ -1,6 +1,6 @@
  <!-- navbar -->
  
- <app-nav></app-nav>
+ <app-nav [navcolor]=" 'red' " [color]=" 'green' " ></app-nav>
 
 
  <div class="card col-lg-4 mx-auto"  [ngClass]="{'d-none': showcard}">
@@ -9,6 +9,40 @@
     <h5 class="card-title">Card title</h5>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+<div class="col-lg-4 mx-auto">
+  <div class="card" [ngClass]="clasobj" [ngStyle]="styles" >
+    <img [src]=" img" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title"  *ngIf="showcard; else mineelse" >Card title</h5>
+ 
+      <ng-template #mineelse>
+       <div> ელს ბლოკი </div> 
+      </ng-template>
+
+      <div [ngSwitch]="'es'">
+        <div *ngSwitchCase="'ka'">ka</div>
+        <div *ngSwitchCase="'en'">en</div>
+        <div *ngSwitchCase="'ru'">ru</div>
+        <div *ngSwitchCase="'es'">es</div>
+        <div *ngSwitchCase="'fr'">fr</div>
+        <div *ngSwitchDefault>საწყისი</div>
+      </div>
+        
+ 
+
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <button class="btn btn-primary" (click)="padd('p-1')">p-1</button>
+      <button class="btn btn-primary" (click)="padd('p-3')">p-3</button>
+      <button class="btn btn-primary" (click)="padd('p-4')">p-4</button>
+
+      <div *ngFor="let myuser of User">
+          <p [ngClass]="{'bg-danger': myuser == 'admin'}">{{ myuser }}</p>
+      </div>
+
+    </div>
   </div>
 </div>
 

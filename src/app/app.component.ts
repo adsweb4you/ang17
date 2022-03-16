@@ -8,14 +8,40 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 10;
-  showcard = true;
+  showcard = false;
+  myshadow = 'shadow-lg';
+
+  clasobj =  [
+    'shadow-lg','rounded','p-5' 
+  ]
+
+  styles = {
+    color:"red",
+    textTransform:'uppercase'
+  }
+
+  img  = 'assets/img/mine.png'
+ 
 
   myname(y:any){
     return y
   }
 
+  padd(bsclass:any){
+    this.clasobj[2]  = bsclass;
+    this.styles.textTransform  = 'lowercase';  
+  }
+
   showdiv(){
    this.showcard = !this.showcard;
   }
+
+
+  User = [
+    "admin",
+    "administrator",
+    "dark",
+    "test"
+  ]
 
 }
