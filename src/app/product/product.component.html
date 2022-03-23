@@ -1,1 +1,14 @@
-<p>product works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4" *ngFor="let Studen of Student">
+            <div class="card">
+                <img src="..." class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{Studen.name}}</h5>
+                  <p class="card-text">{{Studen.course}}</p>
+                  <a  [routerLink]="['/product/'+Studen.id]"   class="btn btn-primary">სრულად ნახვა</a>
+                </div>
+              </div>
+        </div>
+    </div>
+</div>
