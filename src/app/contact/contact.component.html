@@ -1,0 +1,19 @@
+<div class="col-lg-8 mx-auto mt-5">
+    <form action="" [formGroup]="Contact">
+        <div class="row">
+            <div class="col-lg-6">
+                 <input type="text" class="form-control"   formControlName="title">
+                 <small *ngIf="title && title.dirty  && title.invalid" class="text-danger">სიმბოლოების რაოდენობა უნდა იყოს 10 მეტი</small>
+                 <small *ngIf="title && title.dirty  && title.valid" class="text-success">ყველაფერი რიგზეა</small>
+            </div>
+
+            <div class="col-lg-6">
+                <input type="email" class="form-control" formControlName="email"  >
+                <small *ngIf="email && email.dirty  && email.invalid" class="text-danger">შეიყვანეთ სწორი მნიშვნელობა</small>
+           </div>
+  
+        </div>
+        <button type="button" class="btn btn-info"  (click)="setval()">მონაცემების გაწერა</button>
+      <button type="button" class="btn btn-info" [disabled]="!Contact.invalid" (click)="subm()">გაგზავნა</button>
+    </form>
+  </div>
